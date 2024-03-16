@@ -1,5 +1,7 @@
 # migaku_grammar_card
-Migaku card format but made for grammar
+Migaku card format but made for grammar.
+
+For use with https://migaku.com/
 
 **front**
 
