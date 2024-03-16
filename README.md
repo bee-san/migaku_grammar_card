@@ -38,3 +38,7 @@ Click "cards" on the new note type and add the front.html to the front, back to 
 ![image](https://github.com/bee-san/migaku_grammar_card/assets/10378052/9ed91a5c-c4cc-4769-a0e7-89465a38b99e)
 
 Alternatively install the .apkg file which contains 1 card with the existing note type and use that note type.
+
+## How I use this
+
+WHenever I come across text in my immersion or a sentence in Tae Kim's guide with a new grammar point, I mine it into Anki and set the definition to the notes on the grammar point.
