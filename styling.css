@@ -1,0 +1,578 @@
+/* Managed Migaku Note Type */
+
+@font-face {
+  font-family: cardFont;
+  src: url('/_NotoSerifJP-Regular.otf');
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+main.container {
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+}
+
+main.container #qa {
+  margin-top: 0px;
+}
+
+main.container .card {
+  min-height: calc(100vh - 240px);
+}
+
+main.container .card audio {
+  width: 150px;
+}
+
+#content {
+  margin: 0px;
+}
+
+.card,
+.card * {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: cardFont, sans-serif;
+}
+
+.card {
+  background: #e5f9ff;
+  font-size: 18px;
+  font-smooth: always;
+  color: rgb(40, 40, 50);
+  height: 100%;
+  width: 100%;
+}
+
+.migaku-header {
+  background: #2880ff;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: float;
+  justify-content: center;
+  align-items: center;
+}
+
+.migaku-header h1 {
+  color: white;
+}
+
+.migaku-logo {
+  height: 35px;
+  margin: 5px;
+}
+
+.migaku-card,
+.migaku-typeselect {
+  position: relative;
+  background: white;
+  width: 90%;
+  max-width: 650px;
+  margin: 20px auto 50px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.migaku-card-front .migaku-card-content {
+  padding: 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.migaku-card-back .migaku-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+
+.migaku-indented {
+  margin-left: 5%;
+}
+
+.sentence-separator {
+  width: 100%;
+  margin: 15px 0px;
+  border-color: rgb(220, 220, 220);
+}
+
+.migaku-card-sentence {
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.migaku-card-unknown {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.migaku-card-translation,
+.migaku-card-examples {
+  color: rgba(30, 30, 55, 0.7);
+}
+
+.migaku-card-translation,
+.migaku-card-sentence-audio {
+  text-align: center;
+  width: 100%;
+}
+
+.migaku-card-sentence-audio,
+.migaku-card-unknown-audio {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.migaku-card-sentence-audio {
+  justify-content: center;
+}
+
+.migaku-card-screenshot,
+.migaku-card-images {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: end;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  justify-items: center;
+}
+
+.migaku-card-screenshot br,
+.migaku-card-images br {
+  display: none;
+}
+
+.migaku-card-images {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  grid-gap: 5px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.migaku-card-screenshot img {
+  max-width: 100%;
+  max-height: 365px;
+}
+
+.migaku-card-images img {
+  max-width: 100%;
+  max-height: 125px;
+}
+
+.migaku-card-examples {
+  margin-bottom: 15px;
+}
+
+.migaku-card-sentence,
+.migaku-card-unknown,
+.migaku-card-translation,
+.migaku-card-examples,
+.migaku-card-definitions {
+  word-break: break-word;
+}
+
+.migaku-typeselect {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.migaku-typeselect label {
+  padding: 0 7px;
+  white-space: nowrap;
+  font-family: sans-serif;
+}
+
+.ankidroid_dark_mode .migaku-header,
+.nightMode .migaku-header {
+  background: #468ef9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ankidroid_dark_mode.card,
+.nightMode.card {
+  color: rgb(245, 245, 255);
+  background: #2b303b;
+}
+
+.ankidroid_dark_mode .migaku-card-translation,
+.nightMode.card .migaku-card-translation,
+.ankidroid_dark_mode .migaku-card-examples,
+.nightMode.card .migaku-card-examples {
+  color: rgba(230, 230, 255, 0.65);
+}
+
+.ankidroid_dark_mode .migaku-card,
+.nightMode .migaku-card,
+.ankidroid_dark_mode .migaku-typeselect,
+.nightMode .migaku-typeselect {
+  background: #363c4a;
+  box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.15);
+}
+
+.ankidroid_dark_mode .sentence-separator,
+.nightMode .sentence-separator {
+  border-color: rgb(175, 175, 175);
+}
+
+.replay-button {
+  height: 25px;
+}
+
+.playImage {
+  height: 30px !important;
+  width: 30px !important;
+  margin-right: 4px;
+}
+
+@media (min-width: 762px) {
+  .migaku-header {
+    justify-content: start;
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  .migaku-card,
+  .migaku-typeselect {
+    width: 96%;
+  }
+}
+
+/*###MIGAKU JAPANESE SUPPORT CSS STARTS###*/.word {
+    position: relative;
+}
+
+.popup {
+    visibility: hidden;
+    position: absolute;
+
+    z-index: 100;
+
+    padding: 7px;
+    border-radius: 5px;
+
+    text-align: left;
+
+    background-color: #e5f9ff;
+    box-shadow: rgba(0, 0, 0, .35) 0 5px 15px;
+}
+
+.nightMode .popup,
+.ankidroid_dark_mode .popup {
+    color: #ffffff;
+    background-color: #2b303b;
+}
+
+.popup-active .popup {
+    visibility: visible;
+}
+
+.popup-direction-u .popup {
+    left: 0;
+    bottom: calc(100% + 14px);
+}
+
+.popup-direction-d .popup {
+    left: 0;
+    top: calc(100% + 14px);
+}
+
+.popup-direction-l .popup {
+    right: calc(100% + 14px);
+    top: 0;
+}
+
+.popup-direction-r .popup {
+    left: calc(100% + 14px);
+    top: 0;
+}
+
+.popup-direction-u .popup:after {
+    content: " ";
+    position: absolute;
+    left: 5px;
+    bottom: -10px;
+    border-top: 10px solid #e5f9ff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: none;
+}
+
+.nightMode .popup-direction-u .popup:after,
+.ankidroid_dark_mode .popup-direction-u .popup:after {
+    border-top: 10px solid #2b303b;
+}
+
+.popup-direction-d .popup:after {
+    content: " ";
+    position: absolute;
+    left: 5px;
+    top: -10px;
+    border-top: none;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid #e5f9ff;
+}
+
+.nightMode .popup-direction-d .popup:after,
+.ankidroid_dark_mode .popup-direction-d .popup:after {
+    border-bottom: 10px solid #2b303b;
+}
+
+.popup-direction-l .popup:after {
+    content: " ";
+    position: absolute;
+    right: -10px;
+    top: 5px;
+    border-top: 10px solid transparent;
+    border-right: none;
+    border-left: 10px solid #e5f9ff;
+    border-bottom: 10px solid transparent;
+}
+
+.nightMode .popup-direction-l .popup:after,
+.ankidroid_dark_mode .popup-direction-l .popup:after {
+    border-left: 10px solid #2b303b;
+}
+
+.popup-direction-r .popup:after {
+    content: " ";
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #e5f9ff;
+    border-left: none;
+    border-bottom: 10px solid transparent;
+}
+
+.nightMode .popup-direction-r .popup:after,
+.ankidroid_dark_mode .popup-direction-r .popup:after {
+    border-right: 10px solid #2b303b;
+}
+
+
+.popup-hover-box {
+    visibility: hidden;
+    position: absolute;
+    z-index: 50;
+}
+
+.popup-active .popup-hover-box {
+    visibility: visible;
+}
+
+.popup-direction-u .popup-hover-box {
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    height: calc(14px + 5px);
+}
+
+.popup-direction-d .popup-hover-box {
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: calc(14px + 5px);
+}
+
+.popup-direction-l .popup-hover-box {
+    top: 0;
+    right: 100%;
+    width: calc(14px + 5px);
+    height: 100%;
+}
+
+.popup-direction-r .popup-hover-box {
+    top: 0;
+    left: 100%;
+    width: calc(14px + 5px);
+    height: 100%;
+}
+
+
+.popup .pitch-graph {
+    font-size: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+
+.pitch-h,
+.word.active .pitch-hover-h {
+    color: #005CE6;
+}
+
+.pitch-a,
+.word.active .pitch-hover-a {
+    color: #E60000;
+}
+
+.pitch-n,
+.word.active .pitch-hover-n {
+    color: #E68A00;
+}
+
+.pitch-o,
+.word.active .pitch-hover-o {
+    color: #00802B;
+}
+
+.pitch-k,
+.word.active .pitch-hover-k {
+    color: #AC00E6;
+}
+
+.pitch-bg-h,
+.word.active .pitch-bg-hover-h {
+    background-color: #005CE6;
+}
+
+.pitch-bg-a,
+.word.active .pitch-bg-hover-a {
+    background-color: #E60000;
+}
+
+.pitch-bg-n,
+.word.active .pitch-bg-hover-n {
+    background-color: #E68A00;
+}
+
+.pitch-bg-o,
+.word.active .pitch-bg-hover-o {
+    background-color: #00802B;
+}
+
+.pitch-bg-k,
+.word.active .pitch-bg-hover-k {
+    background-color: #AC00E6;
+}
+
+.pitch-h.pitch-bg-h,
+.word.active .pitch-hover-h.pitch-bg-hover-h {
+    background-color: #002762;
+}
+
+.pitch-a.pitch-bg-a,
+.word.active .pitch-hover-a.pitch-bg-hover-a {
+    background-color: #6b0000;
+}
+
+.pitch-n.pitch-bg-n,
+.word.active .pitch-hover-n.pitch-bg-hover-n {
+    background-color: #6e4100;
+}
+
+.pitch-o.pitch-bg-o,
+.word.active .pitch-hover-o.pitch-bg-hover-o {
+    background-color: #003b14;
+}
+
+.pitch-k.pitch-bg-k,
+.word.active .pitch-hover-k.pitch-bg-hover-k {
+    background-color: #3e0053;
+}
+
+.pitch-graph {
+    display: inline-block;
+    position: relative;
+}
+
+.pitch-box {
+    display: inline-block;
+    position: relative;
+    margin-top: 0.6em;
+    margin-bottom: 0.1em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.pitch-overbar {
+    display: inline-block;
+    position: absolute;
+    height: 0.1em;
+    width: 100%;
+    top: -0.275em;
+    left: 0;
+    background-color: currentColor;
+}
+
+.pitch-drop {
+    height: 0.4em;
+    width: 0.1em;
+    position: absolute;
+    top: -0.275em;
+    right: -0.075em;
+    background-color: currentColor;
+}
+
+.pitch-diamond {
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    transform: rotate(45deg) scale(0.71, 0.71);
+    margin-left: 0.05em;
+    margin-right: 0.05em;
+}
+
+.pitch-circle-left {
+    display: inline-block;
+    width: 0.25em;
+    height: 0.5em;
+    border-top-left-radius: 200% 100%;
+    border-bottom-left-radius: 200% 100%;
+    margin-left: 0.05em;
+}
+
+.pitch-circle-right {
+    display: inline-block;
+    width: 0.25em;
+    height: 0.5em;
+    border-top-right-radius: 200% 100%;
+    border-bottom-right-radius: 200% 100%;
+    margin-right: 0.05em;
+}
+
+.pitch-shape-hover .pitch-diamond,
+.pitch-shape-hover .pitch-circle-left,
+.pitch-shape-hover .pitch-circle-right {
+    display: none;
+}
+
+.pitch-shape-hover.active .pitch-diamond,
+.pitch-shape-hover.active .pitch-circle-left,
+.pitch-shape-hover.active .pitch-circle-right {
+    display: inline-block;
+}
+
+
+.furigana-invisible rt {
+    display: none;
+}
+
+.furigana-hover:not(.active) rt {
+    display: none;
+}
+
+
+ruby > rt {
+    user-select: none;
+}
+/*###MIGAKU JAPANESE SUPPORT CSS ENDS###*/
